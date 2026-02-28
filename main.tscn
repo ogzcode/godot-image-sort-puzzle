@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://8npcl52ecm4y"]
+
+[ext_resource type="Script" uid="uid://da4f213jxuy3r" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://cdo3xclm1jok7" path="res://test.png" id="2_0xm2m"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ig7tw")
+source_image = ExtResource("2_0xm2m")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 1044.0
+offset_top = 12.0
+offset_right = 1135.0
+offset_bottom = 35.0
+text = "Doğru Değil"
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
