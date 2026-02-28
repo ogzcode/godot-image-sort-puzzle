@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxii3o1xolayg"]
+
+[ext_resource type="Script" uid="uid://nxqwdecjt4jo" path="res://piece.gd" id="1_3makh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3makh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hisf2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sk825"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y1xrd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g8yu5"]
+
+[node name="Piece" type="Button"]
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3makh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_hisf2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sk825")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_y1xrd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g8yu5")
+expand_icon = true
+script = ExtResource("1_3makh")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+horizontal_alignment = 1
+vertical_alignment = 1
