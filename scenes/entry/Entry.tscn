@@ -1,0 +1,162 @@
+[gd_scene load_steps=7 format=3 uid="uid://crgttflvchkio"]
+
+[ext_resource type="Script" uid="uid://0n2hxpnj4k55" path="res://scenes/entry/entry.gd" id="1_1dpo2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bq1eg"]
+font_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bq1eg"]
+content_margin_top = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0.32003093, 0.19968641, 0.7363443, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1dpo2"]
+content_margin_top = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0.9112243, 0.69022644, 0.3349622, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_askqg"]
+content_margin_top = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0.84467006, 0.261064, 0.19478005, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iqjpr"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+
+[node name="Entry" type="Node2D"]
+script = ExtResource("1_1dpo2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MainButtons" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MainButtons"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/MainButtons/VBoxContainer"]
+layout_mode = 2
+text = "Puzzle Shuffle"
+label_settings = SubResource("LabelSettings_bq1eg")
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/MainButtons/VBoxContainer"]
+layout_mode = 2
+
+[node name="StartBtn" type="Button" parent="CanvasLayer/MainButtons/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_bq1eg")
+text = "Start"
+
+[node name="SettingsBtn" type="Button" parent="CanvasLayer/MainButtons/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_1dpo2")
+text = "Setting"
+
+[node name="ExitBtns" type="Button" parent="CanvasLayer/MainButtons/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_askqg")
+text = "Exit"
+
+[node name="SettingDialog" type="Panel" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/SettingDialog"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = -83.5
+offset_right = 135.0
+offset_bottom = 83.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_iqjpr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/SettingDialog/PanelContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/SettingDialog/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Ayarlar"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/SettingDialog/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/SettingDialog/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.14767182, 0.14767179, 0.14767179, 1)
+text = "Ses"
+
+[node name="CheckBox" type="CheckBox" parent="CanvasLayer/SettingDialog/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/SettingDialog/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/SettingDialog/PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.14767182, 0.14767179, 0.14767179, 1)
+text = "Dil"
+
+[node name="OptionButton" type="OptionButton" parent="CanvasLayer/SettingDialog/PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "Türkçe"
+popup/item_0/id = 1
+popup/item_1/text = "İngilizce"
+popup/item_1/id = 2
+
+[node name="Reset" type="Button" parent="CanvasLayer/SettingDialog/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "İlerlemeyi Sıfırla"
+
+[node name="Close" type="Button" parent="CanvasLayer/SettingDialog/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Kapat"
+
+[connection signal="pressed" from="CanvasLayer/MainButtons/VBoxContainer/StartBtn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainButtons/VBoxContainer/SettingsBtn" to="." method="_on_settings_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainButtons/VBoxContainer/ExitBtns" to="." method="_on_exit_btns_pressed"]
+[connection signal="pressed" from="CanvasLayer/SettingDialog/PanelContainer/VBoxContainer/Close" to="." method="_on_close_pressed"]
